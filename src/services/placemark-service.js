@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import axios from "axios";
-import { latestCategory, latestPlacemark, user } from "../stores";
+import {latestPlacemark, user } from "../stores";
 
 
 export const placemarkService = {
@@ -33,7 +33,7 @@ export const placemarkService = {
           token: ""
         });
         axios.defaults.headers.common["Authorization"] = "";
-        localStorage.removeItem("placemark");
+        // localStorage.removeItem("placemark");
 
     },
 
@@ -73,7 +73,16 @@ export const placemarkService = {
             return [];
         }
     },
-    // to complete
+
+    async getCategory(id) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/api/categories/${id}`);
+            return response.data;
+        } catch (error) {
+            return null;
+        }
+    },
+
     async createCategory(category) {
         try {
             const response = await axios.post(`${this.baseUrl}/api/categories`, category);
@@ -101,6 +110,15 @@ export const placemarkService = {
         }
     },
 
+    async getPlacemark(id) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/api/placemarks/${id}`);
+            return response.data;
+        } catch (error) {
+            return null;
+        }
+    },
+
     async createPlacemark(categoryid, placemark) {
         try {
             const response = await axios.post(`${this.baseUrl}/api/categories/${categoryid}/placemarks`, placemark);
@@ -113,7 +131,7 @@ export const placemarkService = {
     async deletePlacemark(id) {
         try {
             const response = await axios.delete(`${this.baseUrl}/api/placemarks/${id}`);
-            // set
+            
             return response.status == 204;
         } catch (error) {
             return false;

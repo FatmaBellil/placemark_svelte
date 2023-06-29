@@ -4,6 +4,7 @@
 	import { onMount } from "svelte";
 	import { placemarkService } from "../services/placemark-service";
     import  Coordinates  from "$lib/Coordinates.svelte";
+	import PlacemarkMap from "./PlacemarkMap.svelte";
 
     let CategoryList = [];
 
@@ -74,3 +75,4 @@
         {message}
     </div>
 </form>
+

@@ -3,7 +3,7 @@
     <a href="/category" class="column">
         <i class="fa fa-home fa-3x" style="color:rgb(153, 196, 74)" />
     </a>
-    <a href="/placemarks" class="column ">
+    <a href="/placemark" class="column ">
         <i class="fas fa-th-list fa-3x" style="color:rgb(63, 122, 139)" />
     </a>
     <a href="/map" class="column ">

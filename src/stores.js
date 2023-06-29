@@ -5,7 +5,7 @@ export const user = writable({
   token: "",
 });
 export const latestPlacemark = writable(null);
-export const latestCategory = writable(null);
+
 
 
 

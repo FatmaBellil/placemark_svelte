@@ -36,12 +36,12 @@
                     {category.name}
                 </td>
                 <td>
-                    <form action="/categories/{category._id}" method="POST">
-                        <button type="submit" name="get category">
+                    <button>
+                        <a href={`/category/${category._id}`}>
                             <i class="fas fa-edit"></i>
-                        </button>
-                    </form>
-                </td>
+                        </a>
+                    </button>
+                </td>    
                 <td>
                     <form>
                         <button type="submit" on:click={deleteCategory(category._id)} name="delete category" data-category-id={category._id}>

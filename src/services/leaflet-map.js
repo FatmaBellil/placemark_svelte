@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import * as L from "leaflet";
+import { goto } from "$app/navigation";
 
 export class LeafletMap {
     imap = {};
@@ -64,15 +65,19 @@ export class LeafletMap {
     zoomTo(location) {
         this.imap.setView(new L.LatLng(location.lat, location.lng), 8);
     }
-
+  
+    
     addMarker(location, popupText = "", layerTitle = "default") {
         let group = {};
-        let marker = L.marker([location.lat, location.lng]);
+        let marker = L.marker([location.lat, location.lng])
+        .on('click', () => {
+          goto(`/placemark/${location.id}`);
+        });
         if (popupText) {
-            var popup = L.popup({ autoClose: false, closeOnClick: false });
-            popup.setContent(popupText);
-            marker.bindPopup(popup);
+            marker.bindPopup(L.popup().setContent(popupText));
+            marker.on('mouseover', function(e) {this.openPopup()})
         }
+
         if (!this.overlays[layerTitle]) {
             group = L.layerGroup([]);
             this.overlays[layerTitle] = group;
@@ -82,10 +87,15 @@ export class LeafletMap {
         }
         marker.addTo(group);
     }
-
+    
     invalidateSize() {
         this.imap.invalidateSize();
         let hiddenMethodMap = this.imap;
         hiddenMethodMap._onResize();
+          
     }
-}
+    
+};
+
+  
+  
