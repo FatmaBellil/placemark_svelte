@@ -1,5 +1,5 @@
 import { c as create_ssr_component, d as add_attribute, b as each, e as escape, v as validate_component } from "../../../chunks/ssr.js";
-/* empty css                       */import { H as Header } from "../../../chunks/Header.js";
+import { H as Header } from "../../../chunks/Header.js";
 import { M as MainNavigator } from "../../../chunks/MainNavigator.js";
 import { P as PlacemarkMap } from "../../../chunks/PlacemarkMap.js";
 const Coordinates = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -15,8 +15,8 @@ const AddPlacemarkForm = create_ssr_component(($$result, $$props, $$bindings, sl
   let CategoryList = [];
   let name = "";
   let description = "";
-  let latitude = 52.160858;
-  let longitude = -7.15242;
+  let latitude = 49.013432;
+  let longitude = 12.1016;
   let message = "";
   let $$settled;
   let $$rendered;
@@ -44,9 +44,9 @@ const AddPlacemarkForm = create_ssr_component(($$result, $$props, $$bindings, sl
 });
 const PlacemarkList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let placemarkList = [];
-  return `<table class="table is-fullwidth"><thead data-svelte-h="svelte-1lpq2lp"><th style="text-align: center;">Title</th> <th style="text-align: center;">Description</th> <th style="text-align: center;">Latitude</th> <th style="text-align: center;">Longitude</th> <th style="text-align: center;">Details</th> <th style="text-align: center;">Delete</th></thead> <tbody>${each(placemarkList, (placemark) => {
-    return `<tr><td>${escape(placemark.name)}</td> <td>${escape(placemark.description)}</td> <td>${escape(placemark.latitude)}</td> <td>${escape(placemark.longitude)}</td> <td><button><a${add_attribute("href", `/placemark/${placemark._id}`, 0)}><i class="fas fa-edit"></i></a> </button></td> <td><form><button type="submit" name="deleteplacemark" data-svelte-h="svelte-1pdit0k"><i class="fas fa-trash"></i></button> </form></td> </tr>`;
-  })}</tbody></table> ${``}`;
+  return `${placemarkList.length > 0 ? `<table class="table is-fullwidth"><thead data-svelte-h="svelte-1gzk76k"><th style="text-align: center;">Title</th> <th style="text-align: center;">Description</th> <th style="text-align: center;">Latitude</th> <th style="text-align: center;">Longitude</th> <th style="text-align: center;">Details</th> <th style="text-align: center;">Delete</th></thead> <tbody>${each(placemarkList, (placemark) => {
+    return `<tr><td>${escape(placemark.name)}</td> <td>${escape(placemark.description)}</td> <td>${escape(placemark.latitude)}</td> <td>${escape(placemark.longitude)}</td> <td><button><a${add_attribute("href", `/placemark/${placemark._id}`, 0)}><i class="fas fa-edit"></i></a> </button></td> <td><form><button type="submit" name="deleteplacemark" data-svelte-h="svelte-210lgr"><i class="fas fa-trash"></i></button> </form></td> </tr>`;
+  })}</tbody></table> ${``}` : `<h1 class="title" data-svelte-h="svelte-qnsh7j">there is no placemarks yet</h1>`}`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(Header, "Header").$$render($$result, {}, {}, {

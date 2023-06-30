@@ -6,7 +6,7 @@ export const handler = init({
 	assets: new Set([".DS_Store","favicon.png","globe.png","images/layers-2x.png","images/layers.png","images/marker-icon-2x.png","images/marker-icon.png","images/marker-shadow.png","joinus.png","leaflet.css","placemark.png","welcome.png"]),
 	mimeTypes: {".png":"image/png",".css":"text/css"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.f47de26e.js","app":"_app/immutable/entry/app.0f812571.js","imports":["_app/immutable/entry/start.f47de26e.js","_app/immutable/chunks/scheduler.a72357e6.js","_app/immutable/chunks/singletons.0d23069b.js","_app/immutable/chunks/index.de62e4fb.js","_app/immutable/entry/app.0f812571.js","_app/immutable/chunks/preload-helper.41c905a7.js","_app/immutable/chunks/scheduler.a72357e6.js","_app/immutable/chunks/index.ad8854ec.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.6ce16d44.js","app":"_app/immutable/entry/app.c42f8594.js","imports":["_app/immutable/entry/start.6ce16d44.js","_app/immutable/chunks/scheduler.a72357e6.js","_app/immutable/chunks/singletons.3605e943.js","_app/immutable/chunks/index.de62e4fb.js","_app/immutable/entry/app.c42f8594.js","_app/immutable/chunks/preload-helper.41c905a7.js","_app/immutable/chunks/scheduler.a72357e6.js","_app/immutable/chunks/index.ad8854ec.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			() => import('../server/nodes/0.js'),
 			() => import('../server/nodes/1.js'),

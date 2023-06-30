@@ -52,7 +52,7 @@
 				<th>Latitude</th>
 				<th>Longitude</th>
 				<th>temperature</th>
-				<th>Wether</th>
+				<th>Weather</th>
 			</tr>
 		</thead>
 		<tbody>

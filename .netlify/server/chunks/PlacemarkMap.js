@@ -1,5 +1,5 @@
 import { c as create_ssr_component } from "./ssr.js";
-/* empty css         */import { l as latestPlacemark } from "./stores2.js";
+import { l as latestPlacemark } from "./stores2.js";
 function addPlacemarkMarker(map, placemark) {
   const placemarkStr = `${placemark.name}`;
   map.addMarker(
