@@ -7,7 +7,8 @@ import {latestPlacemark, user } from "../stores";
 
 export const placemarkService = {
     // baseUrl: "http://localhost:3000",
-    baseUrl: "https://placemarksvelte.netlify.app",
+    // baseUrl: "https://placemarksvelte.netlify.app",
+    baseUrl: "https://placemark-1uvc.onrender.com/",
 
     async login(email, password) {
         try {
