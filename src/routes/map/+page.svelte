@@ -14,4 +14,4 @@
     <MainNavigator />
 </Header>
 
-<PlacemarkMap />
+<PlacemarkMap onePlacemark={null}  />

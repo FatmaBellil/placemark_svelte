@@ -24,7 +24,4 @@
     <h1 class="title is-4">Add a new Placemark:</h1>
     <AddPlacemarkForm />
 </div>
-
-<PlacemarkMap />
-
-  
+<PlacemarkMap  onePlacemark = {null} />

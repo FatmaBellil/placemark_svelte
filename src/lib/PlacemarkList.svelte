@@ -82,5 +82,5 @@
 		</div>
 	{/if}
 {:else}
-	<h1 class="title">there is no placemarks yet</h1>
+	<h1 class="title">there are no placemarks yet</h1>
 {/if}

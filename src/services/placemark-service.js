@@ -7,7 +7,6 @@ import {latestPlacemark, user } from "../stores";
 
 export const placemarkService = {
     // baseUrl: "http://localhost:3000",
-    // baseUrl: "https://placemarksvelte.netlify.app",
     baseUrl: "https://placemark-1uvc.onrender.com",
 
     async login(email, password) {
@@ -133,11 +132,30 @@ export const placemarkService = {
     async deletePlacemark(id) {
         try {
             const response = await axios.delete(`${this.baseUrl}/api/placemarks/${id}`);
-            
             return response.status == 204;
         } catch (error) {
             return false;
         }
     },
+
+    // upload and delete images
+
+    async uploadImage(placemarkid,imagefile) {
+        try {
+            const response = await axios.post(`${this.baseUrl}/api/placemarks/${placemarkid}/uploadimage`, imagefile);
+            return response.status == 201;
+        } catch (error) {
+            return false;
+        }
+    },
+
+    async deleteImage(placemarkid,img) { 
+        try {
+            const response = await axios.post(`${this.baseUrl}/api/placemarks/${placemarkid}/deleteimage/${img}`);
+            return response.status == 204;
+        } catch (error) {
+            return false;
+        }
+    }
 
 };

@@ -11,9 +11,9 @@
 <h1 class="title is-4 has-text-centered">PLacemarks by Category Chart:</h1>
 <div class="columns box">
 	<div class="column  has-text-centered">
-		<PlacemarksByCategory chartType={'bar'} />
+		<PlacemarksByCategory chartType={"bar"} />
 	</div>
 	<div class="column  has-text-centered">
-		<PlacemarksByCategory chartType={'pie'} />
+		<PlacemarksByCategory chartType={"pie"} />
 	</div>
 </div>

@@ -5,11 +5,13 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { placemarkService } from '../../../services/placemark-service';
+	import PlacemarkImage from '$lib/PlacemarkImage.svelte';
 	import PlacemarkMap from '$lib/PlacemarkMap.svelte';
+	import PLacemarkWeatherChart from '$lib/PLacemarkWeatherChart.svelte';
 
-	export let placemark;
-	export let temperature;
-	export let weatherMain ;
+	let placemark;
+	let temperature;
+	let weatherMain;
 	onMount(async () => {
 		let placemarkid = $page.params.id;
 		placemark = await placemarkService.getPlacemark(placemarkid);
@@ -27,7 +29,6 @@
 			const response = await fetch(url);
 			if (response.ok) {
 				const data = await response.json();
-				console.log(data);
 				temperature = (data.main.temp / 10).toFixed(0);
 				weatherMain = data.weather[0].main;
 			} else {
@@ -66,6 +67,11 @@
 			</tr>
 		</tbody>
 	</table>
+	<div class ="box">
+		<PLacemarkWeatherChart placemark={placemark} />
+	</div>
+	<PlacemarkImage {placemark} />
+	<PlacemarkMap onePlacemark={placemark} style="height: 500px;" />
 {:else}
 	<p>Loading...</p>
 {/if}

@@ -4,7 +4,6 @@
 	import { onMount } from "svelte";
 	import { placemarkService } from "../services/placemark-service";
     import  Coordinates  from "$lib/Coordinates.svelte";
-	import PlacemarkMap from "./PlacemarkMap.svelte";
 
     let CategoryList = [];
 
@@ -22,6 +21,10 @@
     });
 
     async function addPlacemark() {
+        if (CategoryList.length == 0) {
+            message = "Please add a new category first, and then you can add a new placemark in it.";
+            return;
+        }
         if (name && selectedCategory && description && latitude && longitude) {
             const category = CategoryList.find((item) => item.name == selectedCategory);
         
@@ -36,7 +39,6 @@
                 message = "Error! please try again";
                 return;
             } else {
-                message = "a new Placemark is added";
                 location.reload();
             }
         } else {
