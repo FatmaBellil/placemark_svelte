@@ -27,54 +27,60 @@
 		}
 		location.reload();
 	}
-
-	
 </script>
 
-<table class="table is-fullwidth">
-	<thead>
-		<th style="text-align: center;">Title</th>
-		<th style="text-align: center;">Description</th>
-		<th style="text-align: center;">Latitude</th>
-		<th style="text-align: center;">Longitude</th>
-		<th style="text-align: center;">Details</th>
-		<th style="text-align: center;">Delete</th>
-	</thead>
-	<tbody>
-		{#each placemarkList as placemark}
-			<tr>
-				<td>
-					{placemark.name}
-				</td>
-				<td>
-					{placemark.description}
-				</td>
-				<td>
-					{placemark.latitude}
-				</td>
-				<td>
-					{placemark.longitude}
-				</td>
-				<td>
-					<button>
-						<a href={`/placemark/${placemark._id}`}>
-							<i class="fas fa-edit" />
-						</a>
-					</button>
-				</td>
-				<td>
-					<form>
-						<button type="submit" on:click={deletePlacemark(placemark._id)} name="deleteplacemark">
-							<i class="fas fa-trash" />
+{#if placemarkList}
+	<table class="table is-fullwidth">
+		<thead>
+			<th style="text-align: center;">Title</th>
+			<th style="text-align: center;">Description</th>
+			<th style="text-align: center;">Latitude</th>
+			<th style="text-align: center;">Longitude</th>
+			<th style="text-align: center;">Details</th>
+			<th style="text-align: center;">Delete</th>
+		</thead>
+		<tbody>
+			{#each placemarkList as placemark}
+				<tr>
+					<td>
+						{placemark.name}
+					</td>
+					<td>
+						{placemark.description}
+					</td>
+					<td>
+						{placemark.latitude}
+					</td>
+					<td>
+						{placemark.longitude}
+					</td>
+					<td>
+						<button>
+							<a href={`/placemark/${placemark._id}`}>
+								<i class="fas fa-edit" />
+							</a>
 						</button>
-					</form>
-				</td>
-			</tr>
-		{/each}
-	</tbody>
-</table>
-{#if message}
-	<div class="box">
-		{message}
-	</div>
+					</td>
+					<td>
+						<form>
+							<button
+								type="submit"
+								on:click={deletePlacemark(placemark._id)}
+								name="deleteplacemark"
+							>
+								<i class="fas fa-trash" />
+							</button>
+						</form>
+					</td>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
+	{#if message}
+		<div class="box">
+			{message}
+		</div>
+	{/if}
+{:else}
+	<h1 class="title">there is no placemarks yet</h1>
 {/if}

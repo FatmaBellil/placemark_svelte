@@ -10,8 +10,8 @@
 
     let name = "";
     let description = "";
-    let latitude = 52.160858;
-    let longitude = -7.15242;
+    let latitude = 49.013432;
+    let longitude = 12.1016;
 
     let message = "";
     let selectedCategory = "";
