@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
     
-    import "leaflet/dist/leaflet.css";
+    import 'leaflet/dist/leaflet.css';
     import { onMount } from "svelte";
     import { afterUpdate } from 'svelte';
     import {latestPlacemark} from "../stores"
