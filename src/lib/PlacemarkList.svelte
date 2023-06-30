@@ -29,7 +29,7 @@
 	}
 </script>
 
-{#if placemarkList}
+{#if placemarkList.length > 0}
 	<table class="table is-fullwidth">
 		<thead>
 			<th style="text-align: center;">Title</th>
